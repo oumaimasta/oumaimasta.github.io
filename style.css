@@ -16,10 +16,11 @@ section {
 }
 nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     list-style-type: none;
     padding: 0;
-    text-align: center;
+    text-align: right;
+    
 }
 
 nav ul li {
