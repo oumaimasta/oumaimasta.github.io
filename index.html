@@ -1,56 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio personnelle</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-</head>
-
+    <title>Oumaima Sta - Developer</title>
+    <link rel="stylesheet"  href="style.css">
+    
 <body>
-    <header>
-        <nav class="navbar" style="background-color: #e3f2fd;" data-bs-theme="light">
-            <ul>
-                <li><a href="#apropos">SERVICES  </a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <li><a href="#home">HOME</a></li>
-            </ul>
+    <div class="cursor-dot" id="cursor"></div>
 
-        </nav>
-        
+    <nav>
+        <div class="logo">OS</div>
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
 
-    </header>
-    <section id="apropos">
-        <h1>
-            Hi<br>
-            I'm <span class="name">Oumaima Sta</span><br>
-            a student in software development.<br>
-        </h1>
-        <img src="images/oumaima.jpg" class="rounded mx-auto d-block" alt="oumaima" ><br>
-        <p class="fw-light">
-            My mission is to design and develop modern, high-performance websites focused on user experience.
-        </p>
-        
-    
+    <section class="hero" id="home">
+        <div class="grid-bg"></div>
+        <div class="hero-content">
+            <img src="images/oumaima.jpg" alt="Oumaima Sta" class="profile-photo">
+            <h1>OUMAIMA STA</h1>
+            <p>Software Developer | Creative Mind | Problem Solver</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
     </section>
-    
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>✉️oumaimasta19@gmail.com </p>
-        <p>📞 +216 27 604 988</p>
-        <p>🔗<a href="#">Oumaima Sta</a></p>
+
+    <section id="services">
+        <h2>SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🎨</div>
+                <h3>Web Design</h3>
+                <p>Creating visually stunning and user-friendly interfaces that captivate and engage your audience.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">💻</div>
+                <h3>Frontend Development</h3>
+                <p>Building responsive and performant websites using modern technologies and best practices.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">⚡</div>
+                <h3>Performance Optimization</h3>
+                <p>Enhancing speed, efficiency, and user experience through advanced optimization techniques.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>PROJECTS</h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Personal Portfolio</h3>
+                    <p>A modern showcase website built with HTML, CSS and Bootstrap. Features responsive design and smooth animations.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+                
+
+                <div class="project-visual">🌐</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Angular Application</h3>
+                    <p>CRUD application for user management with intuitive interface and real-time data handling.</p>
+                    
+                </div>
+                <div class="project-visual">📱</div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>Solar System</h3>
+                    <p>Interactive school project exploring our solar system built with HTML, CSS Grid and Bootstrap featuring educational content about planets.</p>
+                    
+                </div>
+                <div class="project-visual">🪐</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>GET IN TOUCH</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <a href="mailto:oumaimasta19@gmail.com">oumaimasta19@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <a href="tel:+21627604988">+216 27 604 988</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🔗</div>
+                <a href="https://www.linkedin.com/in/Oumaima Sta/">LinkedIn Profile</a>
+            </div>
+        </div>
+        <div class="cv-buttons">
+            <a href="assets/cv/MonCV.pdf" target="_blank" class="cta-button">View</a>
+            <a href="assets/cv/MonCV.pdf" download class="cta-button">Download</a>
+        </div>
 
     </section>
+
     <footer>
-        <p>&copy; 2025 Oumaima Sta</p>
+        <p>&copy; 2025 Oumaima Sta. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
 
-
+        document.querySelectorAll('a, .service-card, .project-visual').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(3)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
-
 </html>
